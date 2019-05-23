@@ -1,0 +1,31 @@
+{% load cms_tags %}
+<div class="session row"{% if instance.backgrond_color %} style="backgrond-color: {{ instance.backgrond_color }}"{% endif %}>
+    <div class="col">
+        {{ instance.start_time }} - {{ instance.end_time }}
+    </div>
+    <div class="col">
+        <h3>{{ instance.title }}</h3>
+        {% if instance.type %}<p>{{ instance.type }}</p>{% endif %}
+        {{ instance.description|safe }}
+    </div>
+    {% if instance.speakers_list %}
+    <div class="col">
+        {% if instance.speakers_list_title %}<h4>{{ instance.speakers_list_title }}</h4>{% endif %}
+        <ul>
+        {% for speaker in instance.speakers_list.all %}
+            {% include "js_agenda/includes/speaker.html" %}
+        {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+    {% if instance.speakers_list2 %}
+    <div class="col">
+        {% if instance.speakers_list_title2 %}<h4>{{ instance.speakers_list_title2 }}</h4>{% endif %}
+        <ul>
+        {% for speaker in instance.speakers_list2.all %}
+            {% include "js_agenda/includes/speaker.html" %}
+        {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+</div>

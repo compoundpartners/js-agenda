@@ -1,0 +1,6 @@
+{
+    "package-name": "js-agenda",
+    "installed-apps": [
+        "js_agenda"
+    ]
+}

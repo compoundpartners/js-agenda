@@ -1,0 +1,17 @@
+LICENSE
+MANIFEST.in
+README.rst
+setup.py
+js_agenda/__init__.py
+js_agenda/cms_plugins.py
+js_agenda/models.py
+js_agenda.egg-info/PKG-INFO
+js_agenda.egg-info/SOURCES.txt
+js_agenda.egg-info/dependency_links.txt
+js_agenda.egg-info/not-zip-safe
+js_agenda.egg-info/top_level.txt
+js_agenda/migrations/0001_initial.py
+js_agenda/migrations/__init__.py
+js_agenda/templates/js_agenda/agenda.html
+js_agenda/templates/js_agenda/session.html
+js_agenda/templates/js_agenda/includes/speaker.html
