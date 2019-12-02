@@ -78,3 +78,6 @@ class Session(CMSPlugin):
     def __str__(self):
         return self.title or str(self.pk)
 
+    def copy_relations(self, oldinstance):
+        self.speakers_list = oldinstance.speakers_list.all()
+        self.speakers_list2 = oldinstance.speakers_list2.all()

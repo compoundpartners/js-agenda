@@ -13,5 +13,6 @@ js_agenda.egg-info/top_level.txt
 js_agenda/migrations/0001_initial.py
 js_agenda/migrations/__init__.py
 js_agenda/templates/js_agenda/agenda.html
+js_agenda/templates/js_agenda/js_agenda.html
 js_agenda/templates/js_agenda/session.html
 js_agenda/templates/js_agenda/includes/speaker.html
