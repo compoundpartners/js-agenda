@@ -4,14 +4,12 @@ from __future__ import unicode_literals
 
 from cms.models.pluginmodel import CMSPlugin
 from django.db import models
-from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext_lazy as _
 from djangocms_text_ckeditor.fields import HTMLField
 from sortedm2m.fields import SortedManyToManyField
 from js_color_picker.fields import RGBColorField
 
 
-@python_2_unicode_compatible
 class Agenda(CMSPlugin):
     title = models.CharField(
         max_length=255,
@@ -24,7 +22,6 @@ class Agenda(CMSPlugin):
         return self.title or str(self.pk)
 
 
-@python_2_unicode_compatible
 class Session(CMSPlugin):
     start_time = models.CharField(
         max_length=255,
@@ -79,5 +76,5 @@ class Session(CMSPlugin):
         return self.title or str(self.pk)
 
     def copy_relations(self, oldinstance):
-        self.speakers_list = oldinstance.speakers_list.all()
-        self.speakers_list2 = oldinstance.speakers_list2.all()
+        self.speakers_list.set(oldinstance.speakers_list.all())
+        self.speakers_list2.set(oldinstance.speakers_list2.all())
