@@ -8,21 +8,21 @@
         {% if instance.type %}<p>{{ instance.type }}</p>{% endif %}
         {{ instance.description|safe }}
     </div>
-    {% if instance.speakers_list %}
+    {% if instance.speakers_content %}
     <div class="col">
         {% if instance.speakers_list_title %}<h4>{{ instance.speakers_list_title }}</h4>{% endif %}
         <ul>
-        {% for speaker in instance.speakers_list.all %}
+        {% for speaker in instance.speakers_content %}
             {% include "js_agenda/includes/speaker.html" %}
         {% endfor %}
         </ul>
     </div>
     {% endif %}
-    {% if instance.speakers_list2 %}
+    {% if instance.speakers_content2 %}
     <div class="col">
         {% if instance.speakers_list_title2 %}<h4>{{ instance.speakers_list_title2 }}</h4>{% endif %}
         <ul>
-        {% for speaker in instance.speakers_list2.all %}
+        {% for speaker in instance.speakers_content2 %}
             {% include "js_agenda/includes/speaker.html" %}
         {% endfor %}
         </ul>
